@@ -11,4 +11,9 @@ Vagrant.configure("2") do |config|
     # Optional NFS. Make sure to remove other synced_folder line too
     #config.vm.synced_folder ".", "/var/www", :nfs => { :mount_options => ["dmode=777","fmode=666"] }
 
+    # Set hardware
+    config.vm.provider "virtualbox" do |vb|
+      vb.memory = "8048"
+      vb.cpus = "4"
+    end
 end
